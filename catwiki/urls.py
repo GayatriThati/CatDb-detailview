@@ -9,8 +9,7 @@ urlpatterns = [
     #path('human/', HumanList.as_view()),
     #path('breed/', BreedList.as_view()),
     #path('cat/', CatList.as_view()),
-    path('', IndexList.as_view()),
-    path('<pk>', HomeDetail.as_view()),
-    #url(r'^(?P<slug>[\w-]+)/(?P<pk>[0-9]+)$', HomeDetail.as_view())
-]
+    #path('', IndexList.as_view()),
+    #path('<pk>/', HomeDetail.as_view()),
+    
 

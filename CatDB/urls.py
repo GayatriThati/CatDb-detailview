@@ -15,12 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from catwiki.views import HomeDetail,IndexList,HumanDetail
+from django.conf.urls import url
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('catwiki.urls')),
-    #path('page/', include('page.urls')),
-    #path('page/catwiki/', include('catwiki.urls'))
+    path('admin/', admin.site.urls), 
+    path('', IndexList.as_view()), 
+    path('home/<pk>/', HomeDetail.as_view()),
+    #url(r'^(?P<home_slug>[\w-]+)$', HomeDetail.as_view()),
+    path('human/<pk>/', HumanDetail.as_view()),
+    
 ]
 
 
